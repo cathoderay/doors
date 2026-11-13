@@ -301,13 +301,11 @@ class Level(arcade.View):
         # player
         self.player_list = arcade.SpriteList()
         position = self.data["player"] 
-        self.player_list = arcade.SpriteList()
         self.populate_player(position)
 
         # portals
         self.portals_list = arcade.SpriteList()
         positions = self.data["portals"] 
-        self.portals_list = arcade.SpriteList()
         self.populate_portals(positions)
 
         # keys
