@@ -155,7 +155,7 @@ class MainMenu(arcade.View):
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.RETURN:
-            game_view = get_next_level(1) 
+            game_view = get_level(1)
             game_view.setup()
             self.window.show_view(game_view)
         elif key == arcade.key.ESCAPE:
@@ -630,7 +630,7 @@ class Level(arcade.View):
                 sprite = all_sprites.pop()
                 sprite.remove_from_sprite_lists()
             else:
-                new_level = get_next_level(self.level + 1) 
+                new_level = get_level(self.level + 1)
                 if not new_level:
                     new_level = MainMenu()
                     self.window.show_view(new_level)
@@ -845,7 +845,7 @@ levels = [
 ]
 
 
-def get_next_level(level):
+def get_level(level):
     pos = level - 1
 
     if pos < len(levels):
